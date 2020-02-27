@@ -1,20 +1,12 @@
 const API = 'https://raw.githubusercontent.com/GeekBrainsTutorial/online-store-api/master/responses';
 
-// let getRequest = (url, cb) => {
-//     let xhr = new XMLHttpRequest();
-//     // window.ActiveXObject -> xhr = new ActiveXObject()
-//     xhr.open("GET", url, true);
-//     xhr.onreadystatechange = () => {
-//         if(xhr.readyState === 4){
-//             if(xhr.status !== 200){
-//                 console.log('Error');
-//             } else {
-//                 cb(xhr.responseText);
-//             }
-//         }
-//     };
-//     xhr.send();
-// };
+let getRequest = (url) => {
+    return fetch(url)
+    .then(result => result.json())
+    .then(data => {
+        console.log(data)
+    })
+}
 
 class ProductsList {
     constructor(container = '.products'){
